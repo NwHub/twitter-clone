@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>@User - yamada taro</h1>
-    <strong>followers:</strong> 1 <button>follow</button>
+    <strong>followers:</strong> {{ followers }}
+    <button @click="followerCount">follow</button>
   </div>
 </template>
 
@@ -10,7 +11,7 @@ export default {
   name: "hoge",
   data: () => {
     return {
-      hoge: "hoge"
+      followers: 0
     };
   },
   computed: {
@@ -19,7 +20,9 @@ export default {
     }
   },
   methods: {
-    hogeMethods() {}
+    followerCount() {
+      this.followers++;
+    }
   }
 };
 </script>
