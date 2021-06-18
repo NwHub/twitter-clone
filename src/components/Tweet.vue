@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <h1>{{ user.userName }} {{ user.firstName }} {{ user.lastName }}</h1>
-    <strong>followers:</strong> {{ followers }}
-    <button @click="followerCount">follow</button>
+  <div class="user-profile">
+    <div class="user-profile__user-panel">
+      <h1>@{{ user.userName }}</h1>
+      <div>
+        <strong>followers: {{ followers }} </strong>
+        <button @click="followerCount">follow</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -13,7 +17,7 @@ export default {
     return {
       followers: 0,
       user: {
-        userName: "ミワ",
+        userName: "みわ",
         firstName: "泰平",
         lastName: "三輪"
       }
@@ -32,7 +36,31 @@ export default {
 };
 </script>
 <style>
+.user-profile {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 50px;
+  padding: 50px 5%;
+}
+.user-profile__user-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #dfe3e8;
+  margin-bottom: auto;
+}
 h1 {
   margin: 0;
+}
+button {
+  padding: 5px 20px;
+  margin: auto 0;
+  border-radius: 5px;
+  border: none;
+  background-color: deeppink;
+  color: white;
+  font-weight: bold;
 }
 </style>

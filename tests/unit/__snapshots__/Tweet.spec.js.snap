@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tweet.vue button click 1`] = `
+<div class="user-profile">
+  <div class="user-profile__user-panel">
+    <h1>@みわ</h1>
+    <div><strong>followers: 1 </strong> <button>follow</button></div>
+  </div>
+</div>
+`;
+
+exports[`Tweet.vue renders props.msg when passed 1`] = `
+<div class="user-profile">
+  <div class="user-profile__user-panel">
+    <h1>@みわ</h1>
+    <div><strong>followers: 0 </strong> <button>follow</button></div>
+  </div>
+</div>
+`;
