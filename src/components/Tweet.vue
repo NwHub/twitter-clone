@@ -13,7 +13,7 @@ export default {
     return {
       followers: 0,
       user: {
-        userName: "ミワ",
+        userName: "みわ",
         firstName: "泰平",
         lastName: "三輪"
       }
