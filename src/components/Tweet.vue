@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>@User - yamada taro</h1>
+    <h1>{{ user.userName }} {{ user.firstName }} {{ user.lastName }}</h1>
     <strong>followers:</strong> {{ followers }}
     <button @click="followerCount">follow</button>
   </div>
@@ -8,10 +8,15 @@
 
 <script>
 export default {
-  name: "hoge",
+  name: "Tweet",
   data: () => {
     return {
-      followers: 0
+      followers: 0,
+      user: {
+        userName: "ミワ",
+        firstName: "泰平",
+        lastName: "三輪"
+      }
     };
   },
   computed: {
