@@ -7,11 +7,11 @@
         <button @click="followerCount">follow</button>
       </div>
       <!-- 入力 -->
-      <form class="user-profile__create-tweet-panel">
+      <form class="user-profile__create-tweet-panel" @submit.prevent="addTweet">
         <label class="newTweet">
           <strong>New Tweet</strong>
         </label>
-        <textarea rows="4"></textarea>
+        <textarea rows="4" v-model="inputContent"></textarea>
         <div>
           <button>Tweet</button>
         </div>
@@ -34,6 +34,7 @@ export default {
   data: () => {
     return {
       followers: 0,
+      inputContent: "",
       user: {
         userName: "みわ",
         firstName: "泰平",
@@ -55,6 +56,15 @@ export default {
   methods: {
     followerCount() {
       this.followers++;
+    },
+    addTweet() {
+      this.tweets = [
+        {
+          id: this.tweets.length,
+          content: this.inputContent
+        },
+        ...this.tweets
+      ];
     }
   }
 };

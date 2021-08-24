@@ -10,11 +10,20 @@ exports[`Tweet.vue button click 1`] = `
     </form>
   </div>
   <div class="user-profile__tweets-wrapper">
-    <div class="user-profile__tweets-wrapper__tweet-item">
-      <p>Tweet1</p>
+    <div>
+      <div class="user-profile__tweets-wrapper__tweet-item">
+        <p>test1</p>
+      </div>
     </div>
-    <div class="user-profile__tweets-wrapper__tweet-item">
-      <p>Tweet2</p>
+    <div>
+      <div class="user-profile__tweets-wrapper__tweet-item">
+        <p>test2</p>
+      </div>
+    </div>
+    <div>
+      <div class="user-profile__tweets-wrapper__tweet-item">
+        <p>test3</p>
+      </div>
     </div>
   </div>
 </div>
@@ -30,11 +39,20 @@ exports[`Tweet.vue renders props.msg when passed 1`] = `
     </form>
   </div>
   <div class="user-profile__tweets-wrapper">
-    <div class="user-profile__tweets-wrapper__tweet-item">
-      <p>Tweet1</p>
+    <div>
+      <div class="user-profile__tweets-wrapper__tweet-item">
+        <p>test1</p>
+      </div>
     </div>
-    <div class="user-profile__tweets-wrapper__tweet-item">
-      <p>Tweet2</p>
+    <div>
+      <div class="user-profile__tweets-wrapper__tweet-item">
+        <p>test2</p>
+      </div>
+    </div>
+    <div>
+      <div class="user-profile__tweets-wrapper__tweet-item">
+        <p>test3</p>
+      </div>
     </div>
   </div>
 </div>
