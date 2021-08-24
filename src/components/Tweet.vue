@@ -17,6 +17,15 @@
         </div>
       </form>
     </div>
+    <!-- ツイート -->
+    <div class="user-profile__tweets-wrapper">
+      <div class="user-profile__tweets-wrapper__tweet-item">
+        <p>Tweet1</p>
+      </div>
+      <div class="user-profile__tweets-wrapper__tweet-item">
+        <p>Tweet2</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -90,5 +99,17 @@ button {
 }
 .user-profile__tweets-wrapper__tweet-item:hover {
   transform: scale(1.1, 1.1);
+}
+/* インプット */
+textarea {
+  border: 1px solid #dfe3e8;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.user-profile__create-tweet-panel {
+  margin-top: 20px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
 }
 </style>

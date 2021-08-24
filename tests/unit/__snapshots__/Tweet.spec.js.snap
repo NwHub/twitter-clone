@@ -5,6 +5,17 @@ exports[`Tweet.vue button click 1`] = `
   <div class="user-profile__user-panel">
     <h1>@みわ</h1>
     <div><strong>followers: 1 </strong> <button>follow</button></div>
+    <form class="user-profile__create-tweet-panel"><label class="newTweet"><strong>New Tweet</strong></label> <textarea rows="4"></textarea>
+      <div><button>Tweet</button></div>
+    </form>
+  </div>
+  <div class="user-profile__tweets-wrapper">
+    <div class="user-profile__tweets-wrapper__tweet-item">
+      <p>Tweet1</p>
+    </div>
+    <div class="user-profile__tweets-wrapper__tweet-item">
+      <p>Tweet2</p>
+    </div>
   </div>
 </div>
 `;
@@ -14,6 +25,17 @@ exports[`Tweet.vue renders props.msg when passed 1`] = `
   <div class="user-profile__user-panel">
     <h1>@みわ</h1>
     <div><strong>followers: 0 </strong> <button>follow</button></div>
+    <form class="user-profile__create-tweet-panel"><label class="newTweet"><strong>New Tweet</strong></label> <textarea rows="4"></textarea>
+      <div><button>Tweet</button></div>
+    </form>
+  </div>
+  <div class="user-profile__tweets-wrapper">
+    <div class="user-profile__tweets-wrapper__tweet-item">
+      <p>Tweet1</p>
+    </div>
+    <div class="user-profile__tweets-wrapper__tweet-item">
+      <p>Tweet2</p>
+    </div>
   </div>
 </div>
 `;
