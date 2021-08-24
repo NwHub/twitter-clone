@@ -6,6 +6,16 @@
         <strong>followers: {{ followers }} </strong>
         <button @click="followerCount">follow</button>
       </div>
+      <!-- 入力 -->
+      <form class="user-profile__create-tweet-panel">
+        <label class="newTweet">
+          <strong>New Tweet</strong>
+        </label>
+        <textarea rows="4"></textarea>
+        <div>
+          <button>Tweet</button>
+        </div>
+      </form>
     </div>
   </div>
 </template>
@@ -62,5 +72,23 @@ button {
   background-color: deeppink;
   color: white;
   font-weight: bold;
+}
+/* ツイート */
+.user-profile__tweets-wrapper {
+  display: grid;
+  grid-gap: 10px;
+  margin-bottom: auto;
+}
+.user-profile__tweets-wrapper__tweet-item {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #dfe3e8;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.user-profile__tweets-wrapper__tweet-item:hover {
+  transform: scale(1.1, 1.1);
 }
 </style>
