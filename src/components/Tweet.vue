@@ -19,11 +19,10 @@
     </div>
     <!-- ツイート -->
     <div class="user-profile__tweets-wrapper">
-      <div class="user-profile__tweets-wrapper__tweet-item">
-        <p>Tweet1</p>
-      </div>
-      <div class="user-profile__tweets-wrapper__tweet-item">
-        <p>Tweet2</p>
+      <div v-for="tweet in tweets" :key="tweet.id">
+        <div class="user-profile__tweets-wrapper__tweet-item">
+          <p>{{ tweet.content }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -39,9 +38,15 @@ export default {
         userName: "みわ",
         firstName: "泰平",
         lastName: "三輪"
-      }
+      },
+      tweets: [
+        { id: 1, content: "test1" },
+        { id: 2, content: "test2" },
+        { id: 3, content: "test3" }
+      ]
     };
   },
+
   computed: {
     hogeComputed() {
       return "";
