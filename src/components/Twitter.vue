@@ -4,8 +4,9 @@
       <div class="user-profile__user-panel">
         <h1>@User - yamada taro</h1>
         <div>
-          <strong>Followers: </strong> 1
-          <button>follow</button>
+          <strong>Followers: </strong> {{ followers }}
+
+          <button @click="followerCount">follow</button>
         </div>
       </div>
     </div>
@@ -17,11 +18,13 @@ export default {
   name: "hoge",
   data: () => {
     return {
-      hoge: "hoge"
+      followers: 0
     };
   },
   methods: {
-    hogeMethods() {}
+    followerCount() {
+      this.followers++;
+    }
   }
 };
 </script>
