@@ -2,7 +2,7 @@
   <div>
     <div class="user-profile">
       <div class="user-profile__user-panel">
-        <h1>@User - yamada taro</h1>
+        <h1>{{ user.userName }} - {{ user.firstName }} {{ user.lastName }}</h1>
         <div>
           <strong>Followers: </strong> {{ followers }}
 
@@ -16,9 +16,15 @@
 <script>
 export default {
   name: "hoge",
+
   data: () => {
     return {
-      followers: 0
+      followers: 0,
+      user: {
+        userName: "のぐとも",
+        firstName: "智也",
+        lastName: "野口"
+      }
     };
   },
   methods: {
