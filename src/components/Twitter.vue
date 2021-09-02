@@ -5,16 +5,33 @@
         <h1>{{ user.userName }} - {{ user.firstName }} {{ user.lastName }}</h1>
         <div>
           <strong>Followers: </strong> {{ followers }}
-        
+
           <button @click="followerCount">follow</button>
         </div>
+
+        <form
+          class="user-profile__create-tweet-panel"
+          @submit.prevent="addTweet"
+        >
+          <label class="newTweet">
+            <strong>New Tweet</strong>
+          </label>
+          <textarea v-model="inputContent" rows="4"></textarea>
+          <div>
+            <button>Tweet</button>
+          </div>
+        </form>
       </div>
-      
+
       <div class="user-profile__tweets-wrapper">
-          <div class="user-profile__tweets-wrapper__tweet-item" v-for="tweet in user.tweets" :key="tweet.id">
-              <p>{{tweet.content}}</p>
-            </div>
-            </div>
+        <div
+          class="user-profile__tweets-wrapper__tweet-item"
+          v-for="tweet in user.tweets"
+          :key="tweet.id"
+        >
+          <p>{{ tweet.content }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -25,23 +42,31 @@ export default {
 
   data: () => {
     return {
+      inputContent: "",
       followers: 0,
       user: {
         userName: "のぐとも",
         firstName: "智也",
         lastName: "野口",
         tweets: [
-  { id: 1, content: 'いいね！' },
-  { id: 2, content: 'よくないね' },
-]
-
-        
+          { id: 1, content: "いいね！" },
+          { id: 2, content: "よくないね" }
+        ]
       }
     };
   },
   methods: {
     followerCount() {
       this.followers++;
+    },
+    addTweet() {
+      this.user.tweets = [
+        {
+          id: this.user.tweets.length,
+          content: this.inputContent
+        },
+        ...this.user.tweets
+      ];
     }
   }
 };
@@ -61,6 +86,18 @@ export default {
   border-radius: 5px;
   border: 1px solid #dfe3e8;
   margin-bottom: auto;
+}
+/* インプット */
+textarea {
+  border: 1px solid #dfe3e8;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.user-profile__create-tweet-panel {
+  margin-top: 20px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
 }
 /* ツイート */
 .user-profile__tweets-wrapper {
