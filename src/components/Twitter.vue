@@ -5,10 +5,16 @@
         <h1>{{ user.userName }} - {{ user.firstName }} {{ user.lastName }}</h1>
         <div>
           <strong>Followers: </strong> {{ followers }}
-
+        
           <button @click="followerCount">follow</button>
         </div>
       </div>
+      
+      <div class="user-profile__tweets-wrapper">
+          <div class="user-profile__tweets-wrapper__tweet-item" v-for="tweet in user.tweets" :key="tweet.id">
+              <p>{{tweet.content}}</p>
+            </div>
+            </div>
     </div>
   </div>
 </template>
@@ -23,7 +29,13 @@ export default {
       user: {
         userName: "のぐとも",
         firstName: "智也",
-        lastName: "野口"
+        lastName: "野口",
+        tweets: [
+  { id: 1, content: 'いいね！' },
+  { id: 2, content: 'よくないね' },
+]
+
+        
       }
     };
   },
@@ -49,6 +61,24 @@ export default {
   border-radius: 5px;
   border: 1px solid #dfe3e8;
   margin-bottom: auto;
+}
+/* ツイート */
+.user-profile__tweets-wrapper {
+  display: grid;
+  grid-gap: 10px;
+  margin-bottom: auto;
+}
+.user-profile__tweets-wrapper__tweet-item {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #dfe3e8;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.user-profile__tweets-wrapper__tweet-item:hover {
+  transform: scale(1.1, 1.1);
 }
 h1 {
   margin: 0;
